@@ -1,0 +1,966 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        #0f172a;
+
+    color:
+        #f8fafc;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.topbar {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    padding:
+        24px 40px;
+
+    background:
+        #1e293b;
+
+    border-bottom:
+        1px solid #334155;
+}
+
+
+.topbar h1 {
+
+    margin:
+        0;
+
+    font-size:
+        32px;
+}
+
+
+.topbar p {
+
+    margin:
+        7px 0 0;
+
+    color:
+        #94a3b8;
+}
+
+
+/* ================================
+   STATUS BADGE
+================================ */
+
+.status-badge {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    padding:
+        8px 14px;
+
+    border-radius:
+        20px;
+
+    font-size:
+        13px;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        0.5px;
+}
+
+
+.status-badge.running {
+
+    background:
+        #064e3b;
+
+    color:
+        #6ee7b7;
+}
+
+
+.status-badge.stopped {
+
+    background:
+        #374151;
+
+    color:
+        #d1d5db;
+}
+
+
+.status-badge.finished {
+
+    background:
+        #1e3a8a;
+
+    color:
+        #93c5fd;
+}
+
+
+.status-dot {
+
+    width:
+        9px;
+
+    height:
+        9px;
+
+    border-radius:
+        50%;
+
+    background:
+        currentColor;
+}
+
+
+.status-badge.running
+.status-dot {
+
+    animation:
+        pulse 1s infinite;
+}
+
+
+@keyframes pulse {
+
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.35;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* ================================
+   MAIN
+================================ */
+
+main {
+
+    max-width:
+        1250px;
+
+    margin:
+        0 auto;
+
+    padding:
+        30px;
+}
+
+
+/* ================================
+   CONTROLS
+================================ */
+
+.control-panel {
+
+    display:
+        flex;
+
+    gap:
+        12px;
+
+    margin-bottom:
+        25px;
+}
+
+
+.control-button {
+
+    padding:
+        12px 22px;
+
+    border:
+        none;
+
+    border-radius:
+        8px;
+
+    color:
+        white;
+
+    font-size:
+        15px;
+
+    font-weight:
+        600;
+
+    cursor:
+        pointer;
+
+    transition:
+        transform 0.15s,
+        opacity 0.15s;
+}
+
+
+.control-button:hover {
+
+    transform:
+        translateY(-1px);
+
+    opacity:
+        0.9;
+}
+
+
+.step-button {
+
+    background:
+        #2563eb;
+}
+
+
+.run-button {
+
+    background:
+        #059669;
+}
+
+
+.stop-button {
+
+    background:
+        #dc2626;
+}
+
+
+.reset-button {
+
+    background:
+        #475569;
+}
+
+
+/* ================================
+   DASHBOARD
+================================ */
+
+.dashboard-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        20px;
+}
+
+
+/* ================================
+   CARDS
+================================ */
+
+.card {
+
+    background:
+        #1e293b;
+
+    border:
+        1px solid #334155;
+
+    border-radius:
+        12px;
+
+    padding:
+        22px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0, 0, 0, 0.15);
+}
+
+
+.card-header {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    margin-bottom:
+        18px;
+}
+
+
+.card-header h2 {
+
+    margin:
+        0;
+
+    font-size:
+        20px;
+}
+
+
+.card-icon {
+
+    font-size:
+        22px;
+}
+
+
+.section-description {
+
+    margin:
+        6px 0 0;
+
+    color:
+        #94a3b8;
+
+    font-size:
+        14px;
+}
+
+
+/* ================================
+   DATA ROWS
+================================ */
+
+.data-row {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    padding:
+        10px 0;
+
+    border-bottom:
+        1px solid #334155;
+}
+
+
+.data-row:last-child {
+
+    border-bottom:
+        none;
+}
+
+
+.data-row span {
+
+    color:
+        #94a3b8;
+}
+
+
+.data-row strong {
+
+    color:
+        #f8fafc;
+
+    text-align:
+        right;
+}
+
+
+/* ================================
+   SENSOR ROWS
+================================ */
+
+.sensor-row {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    padding:
+        13px 0;
+
+    border-bottom:
+        1px solid #334155;
+}
+
+
+.sensor-row:last-child {
+
+    border-bottom:
+        none;
+}
+
+
+.sensor-row > span {
+
+    color:
+        #94a3b8;
+}
+
+
+.sensor-value {
+
+    display:
+        flex;
+
+    gap:
+        6px;
+
+    align-items:
+        baseline;
+}
+
+
+.sensor-value strong {
+
+    font-size:
+        19px;
+}
+
+
+.sensor-value span {
+
+    color:
+        #64748b;
+
+    font-size:
+        13px;
+}
+
+
+/* ================================
+   MAP
+================================ */
+
+.map-card {
+
+    margin-top:
+        20px;
+}
+
+
+#map {
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    overflow-x:
+        auto;
+
+    margin-top:
+        20px;
+}
+
+
+.robot-map {
+
+    position:
+        relative;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(20, 1fr);
+
+    width:
+        100%;
+
+    min-width:
+        650px;
+
+    aspect-ratio:
+        1 / 1;
+
+    background:
+        #0f172a;
+
+    border:
+        1px solid #475569;
+}
+
+
+/* ================================
+   MAP CELLS
+================================ */
+
+.map-cell {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    border-right:
+        1px solid #1e293b;
+
+    border-bottom:
+        1px solid #1e293b;
+
+    font-family:
+        monospace;
+
+    font-size:
+        13px;
+
+    font-weight:
+        bold;
+
+    transition:
+        background 0.2s ease;
+}
+
+
+.static-obstacle {
+
+    background:
+        #374151;
+
+    color:
+        #cbd5e1;
+}
+
+
+.dynamic-obstacle {
+
+    background:
+        #7f1d1d;
+
+    color:
+        #fecaca;
+}
+
+
+.object-a {
+
+    background:
+        #92400e;
+
+    color:
+        #fef3c7;
+}
+
+
+.object-b {
+
+    background:
+        #1e40af;
+
+    color:
+        #dbeafe;
+}
+
+
+.zone-a {
+
+    background:
+        #065f46;
+
+    color:
+        #a7f3d0;
+}
+
+
+.zone-b {
+
+    background:
+        #581c87;
+
+    color:
+        #e9d5ff;
+}
+
+
+/* ================================
+   ROBOT
+================================ */
+
+.robot-marker {
+
+    position:
+        absolute;
+
+    z-index:
+        10;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    width:
+        5%;
+
+    height:
+        5%;
+
+    color:
+        white;
+
+    background:
+        #2563eb;
+
+    border:
+        2px solid #93c5fd;
+
+    border-radius:
+        7px;
+
+    font-size:
+        20px;
+
+    font-weight:
+        bold;
+
+    box-shadow:
+        0 0 15px
+        rgba(37, 99, 235, 0.65);
+
+    pointer-events:
+        none;
+
+    transition:
+        left 0.35s ease,
+        bottom 0.35s ease;
+}
+
+
+/* ================================
+   LEGEND
+================================ */
+
+.legend {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        10px 18px;
+
+    margin-top:
+        16px;
+
+    margin-bottom:
+        12px;
+}
+
+
+.legend-item {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    color:
+        #cbd5e1;
+
+    font-size:
+        13px;
+}
+
+
+.legend-symbol {
+
+    display:
+        inline-flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    width:
+        24px;
+
+    height:
+        24px;
+
+    border-radius:
+        5px;
+
+    font-family:
+        monospace;
+
+    font-weight:
+        bold;
+}
+
+
+.robot-symbol {
+
+    background:
+        #2563eb;
+}
+
+
+.static-symbol {
+
+    background:
+        #374151;
+}
+
+
+.dynamic-symbol {
+
+    background:
+        #7f1d1d;
+}
+
+
+.object-a-symbol {
+
+    background:
+        #92400e;
+}
+
+
+.object-b-symbol {
+
+    background:
+        #1e40af;
+}
+
+
+.zone-a-symbol {
+
+    background:
+        #065f46;
+}
+
+
+.zone-b-symbol {
+
+    background:
+        #581c87;
+}
+
+
+/* ================================
+   ACTIVITY LOG
+================================ */
+
+.activity-card {
+
+    margin-top:
+        20px;
+}
+
+
+#activity-log {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        8px;
+
+    max-height:
+        320px;
+
+    overflow-y:
+        auto;
+}
+
+
+.activity-item {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        14px;
+
+    padding:
+        11px 14px;
+
+    border-radius:
+        8px;
+
+    background:
+        #0f172a;
+
+    border:
+        1px solid #263449;
+
+    transition:
+        background 0.2s ease;
+}
+
+
+.activity-item.latest {
+
+    border-left:
+        3px solid #2563eb;
+
+    background:
+        #172554;
+}
+
+
+.activity-step {
+
+    min-width:
+        65px;
+
+    color:
+        #60a5fa;
+
+    font-family:
+        monospace;
+
+    font-size:
+        12px;
+
+    font-weight:
+        bold;
+}
+
+
+.activity-message {
+
+    color:
+        #dbeafe;
+
+    font-size:
+        14px;
+}
+
+
+.activity-empty {
+
+    padding:
+        25px;
+
+    text-align:
+        center;
+
+    color:
+        #64748b;
+
+    background:
+        #0f172a;
+
+    border-radius:
+        8px;
+
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 800px) {
+
+    .topbar {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+        gap:
+            15px;
+
+        padding:
+            22px;
+    }
+
+
+    main {
+
+        padding:
+            20px;
+    }
+
+
+    .dashboard-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .control-panel {
+
+        flex-wrap:
+            wrap;
+    }
+
+
+    .robot-map {
+
+        min-width:
+            600px;
+    }
+
+}
